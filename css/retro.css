@@ -1,0 +1,111 @@
+:root {
+    --background-color: #008080;
+    --window-bg-color: #c0c0c0;
+    --window-titlebar-gradient-start: #020870;
+    --window-titlebar-gradient-end: #4c66a6;
+}
+
+body, html { margin: 0; }
+html { overflow: hidden; }
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Tahoma;
+    background-color: var(--background-color);
+    padding-top: 10%;
+}
+
+.window {
+    position: relative;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #808080;
+    border-right: 1px solid #808080;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--window-bg-color);
+}
+.window:after {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-top: 1px solid #dfdfdf;
+    border-left: 1px solid #dfdfdf;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.window > .titlebar {
+    background-image: linear-gradient(to right, var(--window-titlebar-gradient-start) , var(--window-titlebar-gradient-end));
+    padding: 4px;
+    font-size: 12px;
+    color: #FFFFFF;
+}
+.window > .titlebar > .button-close {
+    float: right;
+    width: 15px;
+    height: 13px;
+    padding: 0px;
+    line-height: 0;
+    font-weight: 800;
+    text-transform: full-width;
+}
+.window > .titlebar > .button-close > span {
+    position: absolute;
+    top: 4px;
+    left: 0;
+}
+
+.window > .content {
+    padding: 8px;
+}
+
+.button {
+    position: relative;
+    background-color: var(--window-bg-color);
+    border-top: 1px solid #dfdfdf;
+    border-left: 1px solid #dfdfdf;
+    border-bottom: 1px solid #808080;
+    border-right: 1px solid #808080;
+    z-index: 1;
+}
+.button:after {
+    content: " ";
+    position: absolute;
+    z-index: 0;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+}
+.button:active {
+    border-top-color: #808080;
+    border-left-color: #808080;
+    border-right-color: #e0e0e0;
+    border-bottom-color: #e0e0e0;
+}
+.button:active:after {
+    border-top-color: #000;
+    border-left-color: #000;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+}
